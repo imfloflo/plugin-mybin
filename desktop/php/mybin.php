@@ -250,6 +250,19 @@ $eqLogics = eqLogic::byType($plugin->getId());
                                         </span>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"><i class="fas fa-sign-out-alt"></i> {{Action après exécution de la commande}}</label>
+                                    <div class="col-sm-7">
+                                        <a class="btn btn-xs" id="bt_addBinActionCmd"><i class="fas fa-plus-circle"></i> {{Ajouter}}</a>
+                                    </div>
+                                    <div id="div_binActionCmd"></div>
+                                    <script type="text/javascript">
+                                    $("#div_binActionCmd").sortable({axis: "y", cursor: "move", items: ".binActionCmd", placeholder: "ui-state-highlight", tolerance: "intersect", forcePlaceholderSize: true});
+                                    $('#bt_addBinActionCmd').off('click').on('click',function(){
+                                      addBinAction({}, 'binActionCmd','{{Action}}');
+                                    });
+                                    </script>
+                                </div>
                                 <br>
 							</div>
 							<div class="col-lg-6" style="float: right;">
