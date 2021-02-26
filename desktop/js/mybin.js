@@ -104,3 +104,38 @@ function addBinAction(_action, _type, _name) {
   $('#div_' + _type).append(div)
   $('#div_' + _type + ' .' + _type + '').last().setValues(_action, '.expressionAttr')
 }
+
+$('#eqlogictab').on({
+  'click': function(event) {
+    var type = $(this).attr('data-type')
+    $(this).closest('.' + type).remove()
+  }
+}, '.bt_removeAction')
+
+$('#eqlogictab').on({
+  'click': function(event) {
+    var type = $(this).attr('data-type');
+    var el = $(this).closest('.' + type).find('.expressionAttr[data-l1key=configuration]')
+    jeedom.cmd.getSelectModal({cmd : {type :'action'}}, function(result) {
+      el.value(result.human)
+      jeedom.cmd.displayActionOption(el.value(), '', function(html) {
+        el.closest('.' + type).find('.actionOptions').html(html)
+        jeedomUtils.taAutosize()
+      })
+    })
+  }
+}, '.listCmd')
+
+$('#eqlogictab').on({
+  'click': function(event) {
+    var type = $(this).attr('data-type')
+    var el = $(this).closest('.' + type).find('.expressionAttr[data-l1key=configuration]')
+    jeedom.getSelectActionModal({}, function(result) {
+      el.value(result.human)
+      jeedom.cmd.displayActionOption(el.value(), '', function(html) {
+        el.closest('.' + type).find('.actionOptions').html(html)
+        jeedomUtils.taAutosize()
+      })
+    })
+  }
+}, '.listAction')
