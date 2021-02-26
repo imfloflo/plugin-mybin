@@ -86,10 +86,6 @@ function addBinAction(_action, _type, _name) {
   var div = '<div class="expression ' + _type + '">'
   div += '<input class="expressionAttr" data-l1key="type" style="display : none;" value="action">'
   div += '<div class="form-group ">'
-  div += '<div class="col-sm-1">'
-  div += '<input type="checkbox" class="expressionAttr" data-l1key="configuration" data-l2key="enable" checked title="{{Décocher pour désactiver l\'action}}" />'
-  div += '<input type="checkbox" class="expressionAttr" data-l1key="configuration" data-l2key="background" title="{{Cocher pour que la commande s\'exécute en parallèle des autres actions}}" />'
-  div += '</div>'
   div += '<div class="col-sm-4">'
   div += '<div class="input-group">'
   div += '<span class="input-group-btn">'
@@ -107,6 +103,4 @@ function addBinAction(_action, _type, _name) {
   div += '</div>'
   $('#div_' + _type).append(div)
   $('#div_' + _type + ' .' + _type + '').last().setValues(_action, '.expressionAttr')
-  
-  jeedom.scenario.setAutoComplete({parent: $('#div_'+_type), type:'cmd'})
 }
