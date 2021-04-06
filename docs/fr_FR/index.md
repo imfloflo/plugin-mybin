@@ -25,7 +25,7 @@ Définissez les jours et heures de ramassage de votre poubelle. Plusieurs option
 
 ### Notification
 
-Définisez combien de jours avant chaque ramassage et à quelle heure l'etat de la commande "Poubeele à sortir" doit passer à 1.
+Définisez combien de jours avant chaque ramassage et à quelle heure l'etat de la commande "Poubelle à sortir" doit passer à 1.
 Vous pouvez également définir une expression binaire qui sera évaluée au moment de la notification. Si vérifiée, la commande passera à 1.
 
 ### Compteur
